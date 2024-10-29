@@ -1,4 +1,4 @@
-
+# Initiate grid example
 coord_example = {
         'a1': ' ', 'a2': ' ', 'a3': ' ',
         'b1': ' ', 'b2': 'X', 'b3': ' ',
@@ -6,6 +6,7 @@ coord_example = {
 
 
 def show_grid(coords):
+    """ Shows the main grid based on the coord variable passed """
     # Print the grid header
     print('        | 1 | 2 | 3')
     print('--------------------')
