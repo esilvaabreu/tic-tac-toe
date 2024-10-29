@@ -1,12 +1,12 @@
-# Initiate grid example
+# Create a grid example to be displayed later
 coord_example = {
         'a1': ' ', 'a2': ' ', 'a3': ' ',
         'b1': ' ', 'b2': 'X', 'b3': ' ',
         'c1': ' ', 'c2': ' ', 'c3': ' '}
 
-
 def show_grid(coords):
-    """ Shows the main grid based on the coord variable passed """
+    """Prints the coord grid according to the coords matrix inserted"""
+
     # Print the grid header
     print('        | 1 | 2 | 3')
     print('--------------------')
@@ -19,6 +19,7 @@ def show_grid(coords):
     return ''
 
 def intro_game():
+    """Starts the game by returning the players chosen shapes and the initial coordinates grid"""
     # Initialize game board
     coord_dict = {f'{row}{col}': ' ' for row in 'abc' for col in '123'}
 
@@ -41,7 +42,12 @@ def intro_game():
     return player_1_shape, player_2_shape, coord_dict
 
 def play_game(player_1_shape, player_2_shape, coord_dict):
+    """Main function. Loops until the game is finished. Receives the player's shapes and initial coord grid.
+    Checks for each player's input and finishes the game"""
+
     def is_board_full():
+        """Check if there is still available slots on the main grid and returns True or False"""
+
         return all(value != ' ' for value in coord_dict.values())
 
     while True:
@@ -89,7 +95,9 @@ def play_game(player_1_shape, player_2_shape, coord_dict):
             return
 
 def check_input(player_play, coord_dict):
-    # Check if player_play is a valid key and its value is a space
+    """ Check if player_play is a valid key and its value is a space.
+    Returns True or False"""
+
     if player_play in coord_dict and coord_dict[player_play] == ' ':
         return True
     print('You have entered an invalid coord. Please try again!\n')
@@ -97,6 +105,9 @@ def check_input(player_play, coord_dict):
 
 
 def check_winner(coord_dict):
+    """Receives the coord grid and check the rows, diagonals and columns for a winner condition.
+    Returns True or False."""
+
     # Check rows
     for row in 'abc':
         if coord_dict[row + '1'] == coord_dict[row + '2'] == coord_dict[row + '3'] != ' ':
