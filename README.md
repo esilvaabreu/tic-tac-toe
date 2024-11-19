@@ -14,7 +14,9 @@ This is a simple, text-based version of the classic Tic Tac Toe game built with 
 
 ## How to Play
 **Run the script:** Start the game by running tic_tac_toe.py.
+
 **Take Turns:** Players will be prompted to enter a combination of rows and columns coordinates (a-c for rows and 1-3 for columns) where they would like to place their mark (X or O).
+
 **Win or Draw:** The game will display a message if a player wins or if there is a draw.
 
 ## Running the Game
@@ -42,6 +44,7 @@ Player 1 turn: insert the coordinates to mark in the grid:
 
 ## Code Overview
 **main.py:** Initialize the game
+
 **tic_tac_toe.py:** Contains all logic for the game, including the board display, player turns, and win/draw detection.
 
 ## Future Enhancements
